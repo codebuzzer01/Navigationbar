@@ -1,0 +1,477 @@
+$(function () {
+    'use strict';
+
+   /* $('#photograph').fileupload({
+    	url: 'uploadPhotograph.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#photograph'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadPhotoStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<img height="160" width="120" class="img-thumbnail" alt="Photograph" src="preview.html?photo=' + $('#enrolmentId').val() + '&t=' + (new Date()).getTime() + '" />';
+        			$(".photoThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			
+        			$('#photograph').offsetParent().offsetParent().removeClass("has-error has-feedback");
+        			
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    $('#signature').fileupload({
+    	url: 'uploadSignature.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#signature'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadSignatureStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<img height="50" width="150" class="img-thumbnail" alt="Signature" src="preview.html?sign=' + $('#enrolmentId').val() + '&t=' + (new Date()).getTime() + '" />';
+        			$(".signatureThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			
+        			$('#signature').offsetParent().offsetParent().removeClass("has-error has-feedback");
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    $('#thumbImpression').fileupload({
+    	url: 'uploadThumbImpression.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#thumbImpression'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadThumbImpressionStatus');
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<img height="50" width="150" class="img-thumbnail" alt="Thumb Impression" src="preview.html?thumb=' + $('#enrolmentId').val() + '&t=' + (new Date()).getTime() + '" />';
+        			$(".thumbImprThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			
+        			$('#thumbImpression').offsetParent().offsetParent().removeClass("has-error has-feedback");
+        			
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    */
+    $('#DOBDoc').fileupload({
+    	url: 'uploadDOBDoc.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#DOBDoc'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadDOBDocStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	//console.log('response:'+response);
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		//console.log('response:'+response.status);
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<a class="btn btn-default" title="View recently uploaded Document" href="dlDOBDoc.html" target="_blank">View Supporting Document</a>';
+        			$(".DOBDocThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");	
+        			$('#DOBDocRemark').hide();
+        			$('#DOBDocError').hide();
+        		}
+        		else
+        		{
+        			//console.log('response.message :: '+response.message);
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	//console.log('data '+data);
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    
+    $('#nameChangeDoc').fileupload({
+    	url: 'uploadNameChangeDoc.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#nameChangeDoc'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadNameChangeDocStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	//console.log('response:'+response);
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		//console.log('response:'+response.status);
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<a class="btn btn-default" title="View recently uploaded Document" href="dlNameChangeDoc.html" target="_blank">View Supporting Document</a>';
+        			$(".nameChangeDocThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			$('#nameChangeDocError').hide();
+        			$('#nameChangeDocRemark').hide();
+        		}
+        		else
+        		{
+        			//console.log('response.message :: '+response.message);
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	//console.log('data '+data);
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    $('#categoryCert').fileupload({
+    	url: 'uploadCategoryCert.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#categoryCert'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadCatCertStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<a class="btn btn-default" title="View recently uploaded category certificate" href="dlcatcert.html" target="_blank">View Category Certificate</a>';
+        			$(".catCertThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			//$('#categoryCert').offsetParent().offsetParent().removeClass("has-error has-feedback");
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    $('#eligibilityCert').fileupload({
+    	url: 'uploadEligibilityCert.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#eligibilityCert'),
+        dataType: 'json',
+        context: $('p#uploadEligCertStatus'),
+        add: function(e, data){
+        	data.context = $('p#uploadEligCertStatus');
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			
+        			var img = '<a class="btn btn-default" title="View recently uploaded eligibility certificate" href="dleligcert.html" target="_blank">View Eligibility Certificate</a>';
+        			$(".eligCertThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			//$('#eligibilityCert').offsetParent().offsetParent().removeClass("has-error has-feedback");
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    $('#pwdCert').fileupload({
+    	url: 'uploadPwDCert.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#pwdCert'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadPwDCertStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<a class="btn btn-default" title="View recently uploaded PwD certificate" href="dlpwdcert.html" target="_blank">View PwD Certificate</a>';
+        			$(".pwdCertThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			//$('#pwdCert').offsetParent().offsetParent().removeClass("has-error has-feedback");
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    $('#photoID').fileupload({
+    	url: 'uploadPhotoID.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#photoID'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadPhotoIDStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<a class="btn btn-default" title="View recently uploaded Photo ID" href="dlphotoID.html" target="_blank">View Photo ID</a>';
+        			$(".photoIDThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+    $('#dyslexicCert').fileupload({
+    	url: 'uploadDyslexicCert.html',
+    	formData: {enrolmentId: $('#enrolmentId').val()},
+    	acceptFileTypes: /(\.|\/)(jpe?g)$/i,
+        maxFileSize: 100,
+        dropZone: null,
+        pasteZone: null,
+        fileInput: $('#dyslexicCert'),
+        dataType: 'json',
+        add: function(e, data){
+        	data.context = $('p#uploadDyslexicCertStatus');
+        	
+        	data.context.html('<img src="./img/ajax-loader.gif" alt="Uploading..." />');
+        	data.submit();
+        },
+        done: function (e, data){
+        	var response = data.result.files[0];
+        	
+        	if(!response.isRequestValid)
+        	{
+        		window.location = "requestDenied.html";
+        	}
+        	else
+        	{
+        		data.context.removeClass("alert-danger alert-success");
+        		if(response.status)
+        		{
+        			var img = '<a class="btn btn-default" title="View recently uploaded Dyslexic certificate" href="dldyslexiccert.html" target="_blank">View Dyslexic Certificate</a>';
+        			$(".dyslexicCertThumbnail").html(img);
+        			data.context.text(response.message).addClass("alert-success");
+        			//$('#pwdCert').offsetParent().offsetParent().removeClass("has-error has-feedback");
+        		}
+        		else
+        		{
+        			data.context.text(response.message).addClass("alert-danger");
+        		}
+        	}
+        },
+        fail: function(e, data){
+        	data.context.text("Upload failed! File uploaded is not as per specification.").addClass("alert-danger");
+        },
+        always: function (e, data){
+        	
+        }
+    });
+    
+});
